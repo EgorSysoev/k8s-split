@@ -17,6 +17,9 @@ var (
 
 func main() {
 	flag.Parse()
+	if *tag && *prefix {
+		log.Fatal("Choose either Prefix or Tag")
+	}
 	split.Quiet = *quiet
 	split.Prefix = *prefix
 	split.Tag = *tag
